@@ -1,0 +1,120 @@
+.header {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+  }
+
+  &__link {
+    @include text(500, 16px, 0, #05110160);
+
+    &:hover {
+      color: #051101;
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 200px;
+  }
+
+  .burger {
+    width: 55px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    &__line {
+      position: relative;
+      width: 100%;
+      height: 4px;
+      background: #051101;
+      border-radius: 3px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -12px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #051101;
+        border-radius: 3px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #051101;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .burger {
+    display: flex!important;
+  }
+  .header__list{
+    flex-direction: column;
+    row-gap: 30px;
+    position: absolute;
+    top: -100%;
+    transform: translateY(-100%);
+    left: 0;
+    width: 100%;
+    background: #BEE761;
+    padding: 40px;
+    &.show {
+      transform: translateY(0);
+    }
+  }
+  .header__menu {
+    justify-content: center;
+  }
+  .header__btn {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .burger{
+    &.show {
+      .burger__line {
+        background: transparent;
+        &::before{
+          top: 0;
+          transform: rotate(-45deg);
+        }
+        &::after{
+          top: 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+
+//@media (max-width: 676px) {
+//  .header__nav {
+//    flex-direction: column;
+//    row-gap: 30px;
+//  }
+//}

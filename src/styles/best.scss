@@ -1,0 +1,67 @@
+.best{
+  padding-bottom: 110px;
+  position: relative;
+  &:before{
+    content: url("../images/before__best.png");
+    position: absolute;
+    right: -5%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__row{
+    display: flex;
+    align-items: center;
+    position: relative;
+    &:after{
+      content: "";
+      position: absolute;
+      width: 534px;
+      height: 465px;
+      border: 20px solid #E5F2E1;
+      top: -40px;
+      left: -50px;
+      border-radius: 10px;
+      z-index: -1;
+    }
+  }
+  &__card{
+    width: 50%;
+    &-icon{
+      width: 33px;
+      height: 11px;
+;
+    }
+    &-img{
+      width: 100%;
+      position: relative;
+
+    }
+    &-right{
+      padding-left: 120px ;
+    }
+    &-title{
+      @include text(700,44px,130%,#051101)
+    }
+    &-list{
+      display: flex;
+      flex-direction: column;
+      row-gap: 25px;
+      margin-top: 25px;
+    }
+    &-item{
+      @include text(400,16px,150%,#051101);
+      opacity: 0.7;
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .best::before {
+    display: none;
+  }
+}

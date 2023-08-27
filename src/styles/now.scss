@@ -1,0 +1,23 @@
+.now{
+  padding: 0  0 135px 0;
+  &__content{
+    padding: 80px 0;
+    text-align: center;
+    background: #EBFFE4;
+  }
+  &__title{
+    @include text(700,44px,130%,#051101)
+  }
+  &__desc{
+    @include text(400,16px,150%,#051101);
+    opacity: 0.7;
+    margin: 44px 0 35px;
+  }
+  &__btn{
+    @include text(500,16px,19px,white);
+    padding: 15px 20px;
+    background: #5CBE3A;
+    border-radius: 4px;
+    border: none;
+  }
+}
